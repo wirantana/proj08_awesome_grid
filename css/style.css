@@ -1,0 +1,68 @@
+body{
+    background-color: #333232;
+    /* width: 80%; */
+    margin: auto;
+    font-family: "raleway";
+}
+
+/* ---------------- proj08 awesome container-1 an awesome grid ----------------- */
+
+.container-1 {
+    /* background-color: #b2bb63; */
+    display: grid;
+    grid-gap: 5px;
+    /*grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 100px;      /* implicit rows */
+    /*grid-auto-flow: dense;*/
+
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    padding-bottom: 100px;
+
+}
+
+.container-1 > .horizontal {
+    grid-column: span 2;
+}
+
+.container-1 > .vertical {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.container-1 > .big {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+/* ---------------- proj08 awesome container-2 Named Lines ----------------- */
+
+.container-2 {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 40px auto 40px;
+    text-align: center;
+}
+
+.header {
+    background-color: lawngreen;
+    grid-column: 1 / 3;
+}
+
+.menu {
+    background-color: coral;
+
+}
+
+.content {
+    background-color: darkcyan;
+    grid-column: 2 / 3;
+}
+
+.footer {
+    background-color: lightgrey;
+    grid-column: 1 / 3;
+}
