@@ -19,7 +19,6 @@ body{
     grid-auto-rows: 150px;
     grid-auto-flow: dense;
     padding-bottom: 100px;
-
 }
 
 .container-1 > .horizontal {
