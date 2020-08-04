@@ -1,12 +1,17 @@
-body{
-    background-color: #333232;
-    /* width: 80%; */
-    margin: auto;
+html, body{
+    background-color: #ffeead;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 20px;
     font-family: "raleway";
 }
 
-/* ---------------- proj08 awesome container-1 an awesome grid ----------------- */
+@font-face{                 /* default font face */
+    font-family: 'raleway';
+    src: url(../../proj_fonts/raleway/Raleway-Medium.ttf)
+}
 
+/* ---------------- proj08 awesome container-1 an awesome grid ----------------- */
 .container-1 {
     /* background-color: #b2bb63; */
     display: grid;
@@ -18,7 +23,21 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-auto-rows: 150px;
     grid-auto-flow: dense;
-    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+.container-1 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.container-1 > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .container-1 > .horizontal {
@@ -36,32 +55,52 @@ body{
 }
 
 /* ---------------- proj08 awesome container-2 Named Lines ----------------- */
-
 .container-2 {
-    height: 100%;
+    height: auto;
     display: grid;
     grid-gap: 3px;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 40px auto 40px;
+    /* grid-template-columns option
+    grid-template-columns: 1fr 5fr;         option 1 */
+    grid-template-columns: [main-start] 1fr [content-start] 5fr [content-end main-end];         /* option 2 */
+    /* grid-template-rows option
+    grid-template-rows: 40px 400px 40px;    option 1 */
+    grid-template-rows: [main-start] 40px [content-start] 400px [content-end] 40px [main-end];  /* option 2 */
     text-align: center;
+    margin-bottom: 100px;
+}
+
+.container-2 > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #f4f731;
 }
 
 .header {
-    background-color: lawngreen;
-    grid-column: 1 / 3;
+    background-color: #509c04;
+/*  grid-column: 1 / 3;                     option 1
+    grid-column: main-start / main-end;     option 2 */
+    grid-column: main;                      /* option 3 */
 }
 
 .menu {
-    background-color: coral;
+    background-color: #ff7f50;
 
 }
 
 .content {
-    background-color: darkcyan;
-    grid-column: 2 / 3;
+    background-color: #008b8b;
+/*  grid-column: 2 / 3;                         option 1
+    grid-column: content-start content-end;     option 2 since "content" surrounding by content-start & content-end at column & row */
+    grid-area: content;                         /* option 3 */
 }
 
 .footer {
-    background-color: lightgrey;
-    grid-column: 1 / 3;
+    background-color: #8f8c8c;
+/*  grid-column: 1 / 3;                         option 1
+    grid-column: main-start / main-end;         option 2 */
+    grid-column: main;                          /* option 3 it has box with content lines */
 }
+
+/* ---------------- End of proj08 awesome grid----------------- */
